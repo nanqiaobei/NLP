@@ -1,0 +1,5 @@
+model_checkpoint_path: "D:\\PycharmProject\\tensorflow_poems-master\\model\\poems-48"
+all_model_checkpoint_paths: "D:\\PycharmProject\\tensorflow_poems-master\\model\\poems-30"
+all_model_checkpoint_paths: "D:\\PycharmProject\\tensorflow_poems-master\\model\\poems-36"
+all_model_checkpoint_paths: "D:\\PycharmProject\\tensorflow_poems-master\\model\\poems-42"
+all_model_checkpoint_paths: "D:\\PycharmProject\\tensorflow_poems-master\\model\\poems-48"
