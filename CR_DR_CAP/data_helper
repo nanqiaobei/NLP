@@ -1,6 +1,11 @@
 import codecs
 import collections
 from operator import itemgetter
+import sys
+#制作词汇表
+RAW_DATA="D:\dataset\simple-examples\data\ptb.train.txt"                                  #训练集数据集
+VOCAB_OUTPUT="ptb.vocab"                                                     #输出的词汇表文件
+OUTPUT_DATA='ptb.train'            #将单词替换为单词编号后的输出文件
 
 #制作词汇表
 RAW_DATA="D:\dataset\simple-examples\data\ptb.train.txt"                                  #训练集数据集
@@ -24,3 +29,13 @@ sorted_words=[x[0] for x in sorted_word_to_cnt]
 with codecs.open(VOCAB_OUTPUT,"w","utf-8") as file_output:
     for word in sorted_words:
         file_output.write(word+'\n')
+#读取词汇表，并建立词汇到单词编号的映射
+
+with codecs.open(,"r","utf-8") as f_vocab:
+    vocab=[w.strip() for w in f_vocab.readlines()]
+
+word_to_id={k:v for (k,v) in zip(vocab,range(len(vocab)))}
+#如果出现了被删除的低频词，则替换为“unk”
+def get_id(word):
+    return word_to_id[word] if word in word_to_id else word_to_id['<unk>']
+fin=codecs.open(RAW_DATA,'r',)
