@@ -42,7 +42,7 @@ fin=codecs.open(RAW_DATA,'r',"UTF-8")
 fout=codecs.open(OUTPUT_DATA,"w","utf-8")
 for line in fin:
     words=line.strip().split()+["<eos>"]   #读取单词并添加<eos>结束符
-    out_line=''.join([str(get_id(w)) for w in words])+'\n'
+    out_line=' '.join([str(get_id(w)) for w in words])+'\n'
     fout.write(out_line)
 fin.close()
 fout.close()
